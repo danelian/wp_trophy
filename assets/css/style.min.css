@@ -655,7 +655,7 @@ th {
 .lang-item:not(:last-child) {
   margin-bottom: 8px;
 }
-.lang-item.active {
+.lang-item.current-lang {
   opacity: 1;
   text-decoration: underline;
 }

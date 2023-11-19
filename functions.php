@@ -4,13 +4,15 @@
  * ДОБАВЛЕНИЕ ВОЗМОЖНОСТЕЙ
  */
 if (!function_exists('trophy_setup')) {
-  function trophy_setup()
-  {
+  function trophy_setup() {
+    // Подключение файла переводов
+    load_theme_textdomain( 'trophy', get_template_directory() . '/languages' );
     // Добавляем динамический <title>
     add_theme_support('title-tag');
   }
   add_action('after_setup_theme', 'trophy_setup');
 }
+
 
 /**
  * ПОДКЛЮЧЕНИЕ СТИЛЕЙ И СКРИПТОВ
@@ -44,4 +46,16 @@ function trophy_scripts() {
 }
 add_action('wp_enqueue_scripts', 'trophy_scripts');
 
-?>
+
+/**
+ * Регистрирация областей меню
+ */
+function trophy_menus()
+{
+	$locations = array(
+    'lang' => __('Lang Menu', 'trophy'),
+	);
+	register_nav_menus($locations);
+}
+add_action('init', 'trophy_menus');
+

@@ -3,14 +3,18 @@
   <div class="container">
     <div class="footer__container">
       <div class="footer__copy">
-        © Все права принадлежат сайту www.trophy.fishing и защищены законом. Любое использование (копирование,
-        перепечатка и т.д.) может осуществляться только по согласованию с владельцем сайта и с указанием автора и ссылки
-        на сайт (www.trophy.fishing) на видном месте страницы с используемым материалом.
+        <?php echo __( '© All rights belong to the website www.trophy.fishing and are protected by law. Any use (copying, reprinting, etc.) can only be carried out with the consent of the site owner and indicating the author and a link to the site (www.trophy.fishing) in a prominent place on the page with the material used.', 'trophy' ); ?>
       </div>
-      <ul class="langs">
-        <li class="lang-item"><a href="#">English version</a></li>
-        <li class="lang-item active"><a href="#">Версия на русском</a></li>
-      </ul>
+      <?php
+        wp_nav_menu([
+          'theme_location' => 'lang',
+          'container' => '',
+          'menu_class' => 'langs',
+          'menu_id' => false,
+          'echo' => true,
+          'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        ]);
+        ?>
     </div>
   </div>
 </footer>
