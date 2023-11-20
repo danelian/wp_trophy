@@ -1085,7 +1085,7 @@ input[type=number]::-webkit-inner-spin-button {
 .page-numbers.next.disabled::after {
   border-left-color: var(--font-color) !important;
 }
-.page-numbers.dots {
+/* .page-numbers.dots {
   position: relative;
 }
 .page-numbers.dots span {
@@ -1099,7 +1099,7 @@ input[type=number]::-webkit-inner-spin-button {
   transform: translate(-50%, -60%);
   font-family: sans-serif;
   letter-spacing: -1px;
-}
+} */
 
 @media screen and (max-width: 576px) {
   .pagination {

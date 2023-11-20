@@ -9,6 +9,8 @@ if (!function_exists('trophy_setup')) {
     load_theme_textdomain( 'trophy', get_template_directory() . '/languages' );
     // Добавляем динамический <title>
     add_theme_support('title-tag');
+    // Добавление миниатюр для постов
+    add_theme_support( 'post-thumbnails', array( 'post' ) ); 
   }
   add_action('after_setup_theme', 'trophy_setup');
 }
