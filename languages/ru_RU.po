@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: trophy\n"
-"POT-Creation-Date: 2023-11-19 20:47+0300\n"
+"POT-Creation-Date: 2023-11-20 20:02+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Super Team\n"
@@ -31,6 +31,10 @@ msgstr ""
 "по согласованию с владельцем сайта и с указанием автора и ссылки на сайт "
 "(www.trophy.fishing) на видном месте страницы с используемым материалом."
 
-#: functions.php:54
+#: functions.php:62
 msgid "Lang Menu"
-msgstr "Языковое Меню"
+msgstr "Языковое меню"
+
+#: single.php:90
+msgid "Read also"
+msgstr "Читайте также"

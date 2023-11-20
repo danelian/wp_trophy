@@ -87,53 +87,24 @@
 
 <section class="read-also">
   <div class="container">
-    <h3 class="read-also__title">Читайте также</h3>
-    <div class="blog__cards">
-      <a href="single.html" class="bcard">
-        <div class="bcard-image">
-          <img src="/img/bcard-image-01.jpg" alt="">
-        </div>
-        <div class="bcard-content">
-          <h2 class="bcard-title">Как завязывать узлы</h2>
-          <div class="bcard-descr">
-            <p>Здесь можно найти информацию о тонкостях рыбалки</p>
-          </div>
-        </div>
-      </a>
-      <a href="single.html" class="bcard">
-        <div class="bcard-image">
-          <img src="/img/bcard-image-02.jpg" alt="">
-        </div>
-        <div class="bcard-content">
-          <h2 class="bcard-title">Как разобрать и смазать рыболовную катушку</h2>
-          <div class="bcard-descr">
-            <p>Здесь можно найти информацию о тонкостях рыбалки</p>
-          </div>
-        </div>
-      </a>
-      <a href="single.html" class="bcard">
-        <div class="bcard-image">
-          <img src="/img/bcard-image-01.jpg" alt="">
-        </div>
-        <div class="bcard-content">
-          <h2 class="bcard-title">Как завязывать узлы</h2>
-          <div class="bcard-descr">
-            <p>Здесь можно найти информацию о тонкостях рыбалки</p>
-          </div>
-        </div>
-      </a>
-      <a href="single.html" class="bcard">
-        <div class="bcard-image">
-          <img src="/img/bcard-image-02.jpg" alt="">
-        </div>
-        <div class="bcard-content">
-          <h2 class="bcard-title">Как разобрать и смазать рыболовную катушку</h2>
-          <div class="bcard-descr">
-            <p>Здесь можно найти информацию о тонкостях рыбалки</p>
-          </div>
-        </div>
-      </a>
-    </div>
+    <h3 class="read-also__title"><?php echo __( 'Read also', 'trophy' ); ?></h3>
+    <?php		
+    global $post;
+    $query = new WP_Query( [
+      'post_type'      => 'post',
+      'posts_per_page' => 4,
+      'orderby' => 'rand',
+      'order'    => 'ASC'
+    ]);
+
+    if ( $query->have_posts() ) { ?>
+      <div class="blog__cards">
+      <?php while ( $query->have_posts() ) {
+        $query->the_post();
+        get_template_part('template-parts/bcard');
+      } ?>
+      </div>
+    <?php } else {} ?>
   </div>
 </section>
 
