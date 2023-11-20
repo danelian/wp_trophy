@@ -13,6 +13,10 @@ if (!function_exists('trophy_setup')) {
   add_action('after_setup_theme', 'trophy_setup');
 }
 
+// @ini_set( 'upload_max_size', '100M' );
+// @ini_set( 'post_max_size', '70M');
+// @ini_set( 'max_execution_time', '250M');
+
 
 /**
  * ПОДКЛЮЧЕНИЕ СТИЛЕЙ И СКРИПТОВ
@@ -58,4 +62,3 @@ function trophy_menus()
 	register_nav_menus($locations);
 }
 add_action('init', 'trophy_menus');
-

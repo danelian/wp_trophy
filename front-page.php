@@ -4,29 +4,22 @@
 	<div class="container">
 		<div class="section-search">
 			<h1 class="page-title">Что у вас клюёт?</h1>
-			<form role="search" method="get" action="#" class="search-form">
-				<input class="search-input" type="text" placeholder="Поиск" value="" name="s">
-				<button class="button">Поиск</button>
-			</form>
+			<?php get_search_form(); ?>
 		</div>
 
 		<div class="section-categories">
-			<a href="#" class="category">
-				<h2 class="category-title">Виды рыб</h2>
-				<div class="category-descr">
-					<p>Здесь можно найти информацию как о популярных, так и о редких видах рыб</p>
-				</div>
+			<a href="<?php the_field('category_fishes_link'); ?>" class="category">
+				<h2 class="category-title"><?php the_field('category_fishes_title'); ?></h2>
+				<p class="category-descr"><?php the_field('category_fishes_descr'); ?></p>
 				<svg width="210" height="166" viewBox="0 0 210 166" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M208.066 5.54843C202.638 3.17053 196.983 2.26466 191.102 3.51023C187.031 4.4161 182.959 5.32196 179.114 6.90723C170.519 10.3042 162.263 14.2674 153.781 17.7776C146.316 21.0614 138.626 22.9864 130.37 20.8349C129.465 20.6085 128.447 20.1555 127.542 19.7026C128.334 19.1364 129.126 18.457 129.804 17.8909C130.257 17.4379 130.709 16.8718 131.048 16.4188C130.483 16.1924 129.917 15.7394 129.352 15.6262C122.679 14.9468 117.024 12.4557 112.501 7.92633C108.09 3.51023 111.257 0 108.655 0C107.185 0 101.417 2.3779 99.6077 3.28377C94.9708 5.54843 90.8993 8.60573 87.0541 12.0027C86.1493 12.7954 84.7922 13.4748 83.5481 13.588C79.5898 13.8145 75.6314 13.4748 71.7862 13.8145C64.7742 14.2674 57.8754 14.9468 50.9766 15.8527C47.923 16.3056 44.9825 17.3247 42.042 18.1173C31.6372 20.8349 22.7026 25.3643 15.8038 32.7244C15.1252 33.4038 14.7859 33.5171 14.5598 33.2906C13.4288 31.9318 13.5419 27.9686 13.8812 26.4966C14.1074 25.704 13.5419 25.7039 12.9764 25.8172C10.7145 26.1569 8.22639 27.0627 4.15495 33.97C1.77994 37.9331 0.76208 43.9345 1.55375 49.5962C2.11923 53.5593 2.23232 56.6166 1.10137 60.8063C0.083504 64.6562 -0.255782 69.0723 0.196601 73.1487C1.10137 83 4.49424 92.1719 9.80973 100.664C14.4467 108.025 20.2145 114.366 26.5479 120.254C34.2384 127.387 43.3992 132.596 52.3337 138.031C53.3516 138.711 54.4825 139.277 55.5004 139.843C53.0123 144.599 44.6432 147.883 42.3813 150.147C42.042 150.487 41.9289 151.053 41.9289 151.506C42.042 151.959 42.3813 152.412 42.8337 152.638C49.3932 155.809 58.6671 157.055 67.6016 156.715C72.804 156.488 92.2565 152.752 97.7982 151.959C101.643 151.393 106.733 152.638 110.578 154.563C115.215 156.941 119.852 159.206 124.828 160.791C130.822 162.716 136.929 164.301 143.15 165.207C147.673 165.887 150.84 165.887 154.572 166C157.06 166 159.209 166 160.453 165.887C166.334 165.547 169.727 164.981 171.989 164.528C174.816 164.075 179.906 162.603 182.507 161.471C184.09 160.791 184.203 159.432 183.412 158.187C182.959 157.394 182.168 156.828 181.376 156.149C177.418 152.638 173.346 149.355 169.501 145.844C163.733 140.636 158.191 135.201 152.197 130.331C147.108 126.142 141.566 122.632 136.138 118.895C134.328 117.649 132.405 116.63 130.596 115.498C129.578 114.932 128.56 114.252 127.429 113.686C122.905 111.422 118.269 109.27 113.745 106.892C111.03 105.533 106.959 104.061 95.6494 99.4188C92.5958 98.1732 65.3397 86.8499 63.8695 86.0573C59.1195 83.4529 54.8218 80.3956 51.3159 76.3192C49.9587 74.734 49.2801 70.0914 49.9587 67.94C51.2028 63.8636 52.5599 63.0709 56.0659 60.8063C61.1552 57.5225 63.8695 53.6726 65.0004 48.4638C65.1135 48.1241 65.3397 46.8786 64.2088 47.3315C62.6254 48.0109 58.4409 47.6712 56.9706 46.8786C56.6314 46.7653 57.0837 46.0859 58.2147 45.1801C58.8933 44.6139 59.5718 44.161 60.2504 43.5948C63.8695 41.1037 67.7147 38.9522 71.8993 37.4802C77.7802 35.442 83.8874 33.6303 89.9946 32.7244C94.5184 32.045 99.2684 32.7244 103.905 33.1773C107.864 33.6303 111.822 34.5362 115.78 35.3288C116.346 35.442 116.911 35.6685 117.364 36.0082C120.191 37.7067 122.905 39.5184 125.846 41.1037C128.334 42.4625 130.935 43.5948 133.536 44.7271C134.554 45.1801 135.459 45.0668 135.911 44.6139C137.042 43.4816 133.65 38.9522 134.894 34.3097C135.12 33.6303 135.12 33.1774 135.572 33.2906C149.257 36.4611 149.37 41.2169 166.673 44.5007C172.554 45.633 177.983 45.0668 183.185 45.0668C186.578 45.0668 187.37 43.3684 185.674 40.4243C184.203 38.1596 182.507 36.1214 180.924 33.8568C179.227 31.4789 179.793 29.7803 182.054 28.0818C185.56 25.251 189.179 22.6467 192.233 19.4761C196.983 14.4939 201.959 10.191 208.745 8.37926C209.311 8.26603 210.102 7.36016 209.989 7.13369C209.197 6.56752 208.632 5.88813 208.066 5.54843Z"
 						fill="currentColor" fill-opacity="0.1" />
 				</svg>
 			</a>
-			<a href="#" class="category">
-				<h2 class="category-title">Интересные статьи</h2>
-				<div class="category-descr">
-					<p>Здесь можно найти информацию о тонкостях рыбалки</p>
-				</div>
+			<a href="<?php the_field('category_blog_link'); ?>" class="category">
+				<h2 class="category-title"><?php the_field('category_blog_title'); ?></h2>
+				<p class="category-descr"><?php the_field('category_blog_descr'); ?></p>
 				<svg width="600" height="220" viewBox="0 0 600 220" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<g clip-path="url(#clip0_208_34)">
 						<path
@@ -43,29 +36,8 @@
 		</div>
 
 		<div class="section-content">
-			<h1 class="section-title">Lorem ipsum dolor</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-				magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-				aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-				magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-				aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat.</p>
-			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat.</p>
+			<h1 class="section-title"><?php the_field('front_info_title'); ?></h1>
+			<?php the_field('front_info_content'); ?>
 		</div>
 	</div>
 </section>
