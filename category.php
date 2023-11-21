@@ -1,8 +1,10 @@
 <?php get_header(); ?>
 
-<section class="section-blog">
+<section class="species-category">
   <div class="container">
-    <h1 class="page-title"><?php echo get_the_title(get_option('page_for_posts')) ?></h1>
+    <h1 class="page-title"><?php single_cat_title(); ?></h1>
+    <!-- breadcrumbs -->
+    <?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
 
     <?php
     global $post;

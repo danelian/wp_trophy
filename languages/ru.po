@@ -1,0 +1,47 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trophy\n"
+"POT-Creation-Date: 2023-11-21 22:19+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: My Super Team\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_attr_e;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: archive-articles.php:9
+msgid "Articles"
+msgstr "Статьи"
+
+#: footer.php:6 single.php:25
+msgid ""
+"© All rights belong to the website www.trophy.fishing and are protected by "
+"law. Any use (copying, reprinting, etc.) can only be carried out with the "
+"consent of the site owner and indicating the author and a link to the site "
+"(www.trophy.fishing) in a prominent place on the page with the material used."
+msgstr ""
+"© Все права принадлежат сайту www.trophy.fishing и защищены законом. Любое "
+"использование (копирование, перепечатка и т.д.) может осуществляться только "
+"по согласованию с владельцем сайта и с указанием автора и ссылки на сайт "
+"(www.trophy.fishing) на видном месте страницы с используемым материалом."
+
+#: single-articles.php:14
+msgid "Read also"
+msgstr "Читайте также"
+
+#: single.php:17
+msgid "Habitat"
+msgstr "Ареал обитания"
+
+#~ msgid "Lang Menu"
+#~ msgstr "Языковое меню"

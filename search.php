@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Search
+*/
+get_header(); ?>
 
 <section class="species">
   <div class="container">

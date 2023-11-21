@@ -3,12 +3,12 @@
 <section class="section-home">
 	<div class="container">
 		<div class="section-search">
-			<h1 class="page-title">Что у вас клюёт?</h1>
+			<h1 class="page-title"><?php __("What's biting you?", 'trophy') ?></h1>
 			<?php get_search_form(); ?>
 		</div>
 
 		<div class="section-categories">
-			<a href="<?php the_field('category_fishes_link'); ?>" class="category">
+			<a href="<?php the_field('category_fishes_link'); ?>" class="category-item">
 				<h2 class="category-title"><?php the_field('category_fishes_title'); ?></h2>
 				<p class="category-descr"><?php the_field('category_fishes_descr'); ?></p>
 				<svg width="210" height="166" viewBox="0 0 210 166" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@
 						fill="currentColor" fill-opacity="0.1" />
 				</svg>
 			</a>
-			<a href="<?php the_field('category_blog_link'); ?>" class="category">
+			<a href="<?php the_field('category_blog_link'); ?>" class="category-item">
 				<h2 class="category-title"><?php the_field('category_blog_title'); ?></h2>
 				<p class="category-descr"><?php the_field('category_blog_descr'); ?></p>
 				<svg width="600" height="220" viewBox="0 0 600 220" fill="none" xmlns="http://www.w3.org/2000/svg">
