@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: trophy\n"
-"POT-Creation-Date: 2023-11-20 20:02+0300\n"
+"POT-Creation-Date: 2023-11-22 07:31+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Super Team\n"
@@ -19,7 +19,23 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: footer.php:6
+#: 404.php:7
+msgid "This page"
+msgstr "Такой страницы"
+
+#: 404.php:7
+msgid "does not exist"
+msgstr "не существует"
+
+#: 404.php:8
+msgid "To main"
+msgstr "На главную"
+
+#: archive-articles.php:9
+msgid "Articles"
+msgstr "Статьи"
+
+#: footer.php:6 single.php:25
 msgid ""
 "© All rights belong to the website www.trophy.fishing and are protected by "
 "law. Any use (copying, reprinting, etc.) can only be carried out with the "
@@ -31,10 +47,38 @@ msgstr ""
 "по согласованию с владельцем сайта и с указанием автора и ссылки на сайт "
 "(www.trophy.fishing) на видном месте страницы с используемым материалом."
 
-#: functions.php:62
-msgid "Lang Menu"
-msgstr "Языковое меню"
+#: front-page.php:6
+msgid "What's biting you?"
+msgstr "Что у вас клюёт?"
 
-#: single.php:90
+#: search.php:10
+msgid "Types of fish"
+msgstr "Виды рыб"
+
+#: search.php:23 search.php:46
+msgid "For example:"
+msgstr "Например:"
+
+#: search.php:63
+msgid "Detailed search"
+msgstr "Подробный поиск"
+
+#: search.php:122 searchform.php:6
+msgid "Search"
+msgstr "Поиск"
+
+#: search.php:126
+msgid "Searching results:"
+msgstr "Результаты поиска:"
+
+#: search.php:149
+msgid "No results"
+msgstr "Нет результатов"
+
+#: single-articles.php:14
 msgid "Read also"
 msgstr "Читайте также"
+
+#: single.php:17
+msgid "Habitat"
+msgstr "Ареал обитания"
