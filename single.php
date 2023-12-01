@@ -14,7 +14,7 @@
       <?php $areal = get_field('single_areal');
       if ($areal) { ?>
         <div class="species-article__areal">
-          <h3><?php echo __('Habitat', 'trophy') ?></h3>
+          <h3><?php echo __('Habitat', 'trophy'); ?></h3>
           <img src="<?php echo $areal ?>" alt="">
         </div>
       <?php } ?>

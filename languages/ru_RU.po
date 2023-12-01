@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: trophy\n"
-"POT-Creation-Date: 2023-11-22 07:31+0300\n"
+"POT-Creation-Date: 2023-12-01 03:02+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Super Team\n"
@@ -19,21 +19,45 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: 404.php:7
+#: 404.php:6
 msgid "This page"
 msgstr "Такой страницы"
 
-#: 404.php:7
+#: 404.php:6
 msgid "does not exist"
 msgstr "не существует"
 
-#: 404.php:8
+#: 404.php:7
 msgid "To main"
 msgstr "На главную"
 
 #: archive-articles.php:9
 msgid "Articles"
 msgstr "Статьи"
+
+#: backup.php:10 search.php:10
+msgid "Types of fish"
+msgstr "Виды рыб"
+
+#: backup.php:19 backup.php:42
+msgid "For example:"
+msgstr "Например:"
+
+#: backup.php:59 search.php:17
+msgid "Detailed search"
+msgstr "Подробный поиск"
+
+#: backup.php:118 search.php:78 searchform.php:6
+msgid "Search"
+msgstr "Поиск"
+
+#: backup.php:122 search.php:84
+msgid "Searching results:"
+msgstr "Результаты поиска:"
+
+#: backup.php:145 functions.php:439 search.php:114
+msgid "No results"
+msgstr "Нет результатов"
 
 #: footer.php:6 single.php:25
 msgid ""
@@ -51,29 +75,53 @@ msgstr ""
 msgid "What's biting you?"
 msgstr "Что у вас клюёт?"
 
-#: search.php:10
-msgid "Types of fish"
-msgstr "Виды рыб"
+#: functions.php:69
+msgid "Search..."
+msgstr "Поиск…"
 
-#: search.php:23 search.php:46
-msgid "For example:"
-msgstr "Например:"
-
-#: search.php:63
-msgid "Detailed search"
-msgstr "Подробный поиск"
-
-#: search.php:122 searchform.php:6
-msgid "Search"
-msgstr "Поиск"
-
-#: search.php:126
-msgid "Searching results:"
-msgstr "Результаты поиска:"
-
-#: search.php:149
-msgid "No results"
+#: functions.php:70
+msgid "No results found"
 msgstr "Нет результатов"
+
+#: functions.php:71
+msgid "Enter the name of the fish"
+msgstr "Введите название рыбы"
+
+#: functions.php:72
+msgid "Genus, species or name of fish"
+msgstr "Род, вид или название рыбы"
+
+#: functions.php:73
+msgid "Nothing found"
+msgstr "Ничего не найдено"
+
+#: functions.php:395 functions.php:458
+msgid "Choose"
+msgstr "Выбрать"
+
+#: functions.php:495
+msgid "Kingdom"
+msgstr "Царство"
+
+#: functions.php:496
+msgid "Type"
+msgstr "Тип"
+
+#: functions.php:497
+msgid "Class"
+msgstr "Класс"
+
+#: functions.php:498
+msgid "Squad"
+msgstr "Отряд"
+
+#: functions.php:499
+msgid "Family"
+msgstr "Семейство"
+
+#: functions.php:500
+msgid "Genus"
+msgstr "Род"
 
 #: single-articles.php:14
 msgid "Read also"
@@ -82,3 +130,7 @@ msgstr "Читайте также"
 #: single.php:17
 msgid "Habitat"
 msgstr "Ареал обитания"
+
+#: template-parts/no-post.php:1
+msgid "No posts"
+msgstr "Постов нет"

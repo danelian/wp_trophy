@@ -7,7 +7,7 @@ get_header(); ?>
 <section class="section-blog">
   <div class="container">
     <h1 class="page-title"><?php echo __('Articles', 'trophy'); ?></h1>
-
+    
     <?php		
     global $post;
     $current = absint(

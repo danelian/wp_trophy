@@ -3,8 +3,8 @@
 <section class="section-home">
 	<div class="container">
 		<div class="section-search">
-			<h1 class="page-title"><?php __("What's biting you?", 'trophy') ?></h1>
-			<?php get_search_form(); ?>
+			<h1 class="page-title"><?php echo __("What's biting you?", 'trophy') ?></h1>
+			<?php echo do_shortcode('[ivory-search id="181" title="AJAX Search Form"]'); ?>
 		</div>
 
 		<div class="section-categories">

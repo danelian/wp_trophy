@@ -9,6 +9,16 @@ if (!function_exists('trophy_setup')) {
     load_theme_textdomain( 'trophy', get_template_directory() . '/languages' );
     // Добавляем динамический <title>
     add_theme_support('title-tag');
+		// Добавление html5
+		add_theme_support( 'html5', array(
+			'comment-list',
+			'comment-form',
+			'search-form',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		) );
     // Добавление миниатюр для постов
     add_theme_support( 'post-thumbnails', array( 'post', 'articles' ) ); 
   }
@@ -18,6 +28,7 @@ if (!function_exists('trophy_setup')) {
 // @ini_set( 'upload_max_size', '100M' );
 // @ini_set( 'post_max_size', '70M');
 // @ini_set( 'max_execution_time', '250M');
+
 
 
 /**
@@ -47,8 +58,22 @@ function trophy_scripts() {
   // wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array('jquery'), null, true);
   // Select2
   wp_enqueue_script('select2', get_template_directory_uri() . '/assets/js/select2.min.js', array('jquery'), null, true);
+  // wp_enqueue_script('select2-ru', get_template_directory_uri() . '/assets/js/select2-ru.js', array('jquery', 'select2'), null, true);
   // App js
   wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery', 'select2'), null, true);
+  //
+  wp_enqueue_script('ajaxfilterfish', get_template_directory_uri() . '/assets/js/fishfilter.js', array('jquery'), null, true);
+
+	
+	$mydata = [
+		'select_search' => __('Search...', 'trophy'),
+		'select_nofound' => __('No results found', 'trophy'),
+		'main_searchform' => __('Enter the name of the fish', 'trophy'),
+		'second_searchform' => __('Genus, species or name of fish', 'trophy'),
+		'nothing_found' => __('Nothing found', 'trophy'),
+	];
+	
+	wp_add_inline_script( 'app', 'const myScriptData = ' . wp_json_encode( $mydata ), 'before' );
 }
 add_action('wp_enqueue_scripts', 'trophy_scripts');
 
@@ -64,6 +89,26 @@ function trophy_menus()
 	register_nav_menus($locations);
 }
 add_action('init', 'trophy_menus');
+
+
+/**
+ * Поиск только среди стандартного типа записей Вордпресса
+ */
+function search_filter($query) {
+	if ($query->is_search && !is_admin()) {
+			$query->set('post_type', 'post');
+	}
+	return $query;
+}
+add_filter('pre_get_posts','search_filter');
+// $search = $_GET['s'];
+
+// $args = array(
+// 	'post_type' => 'post', // post, teams или как у тебя тип записи зовется
+// 	'post_status' => 'publish',
+// 	'posts_per_page' => -1,
+// 	's' => $search,
+// );
 
 
 /**
@@ -330,3 +375,130 @@ function dimox_breadcrumbs() {
 
 	}
 } // end of dimox_breadcrumbs()
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+
+add_action( 'wp_ajax_test', 'test_ajax' );
+add_action( 'wp_ajax_nopriv_test', 'test_ajax' ); 
+ 
+function test_ajax(){
+
+	/*
+	*
+	*
+	*/
+	$select_placeholder = __('Choose', 'trophy');
+  $terms = get_terms(
+		'category', [ 
+		  'hide_empty' 		=> false, 
+		  'parent' 				=> $_POST['term_id'], 
+		  'exclude' 		  => array( 1, 8 ) 
+		]
+	);
+
+	$result = array('elements' => array() );
+
+	$result['elements'][] = "<option value='0'>$select_placeholder</option>"; 
+
+	foreach ( $terms as $term )
+		  $result['elements'][] = "<option value='$term->term_id'>$term->name</option>";
+
+	/**
+	 * 
+	 * 
+	 */
+
+	$posts_args = array(
+      's' => $_POST['search'],
+      'cat' => $_POST['term_id'],
+  );
+
+  $the_query = new WP_Query( $posts_args ); 
+
+  if ( $the_query->have_posts() ) { 
+
+    $cards = ''; 
+
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+
+        $permalink = get_permalink();
+        $img       = get_the_post_thumbnail_url();
+        $title     = get_the_title();
+        
+        $cards .= "<a href='$permalink' class='scard'><div class='scard-image'><img src='$img' alt=''></div><h2 class='scard-title'>$title</h2></a>";
+    }  
+
+  } else {
+
+  		$cards .= '<p class="species__results-empty">'.__('No results', 'trophy').'</p>';
+
+  }
+
+  $result['posts'] = $cards;
+
+	echo json_encode( $result );
+ 
+	die; // даём понять, что обработчик закончил выполнение
+}
+
+/**
+*
+*
+*
+*
+*/
+
+function reposium_fish_level( $level, $name, $term_id = false, $expand = false ) {    
+	$select_placeholder = __('Choose', 'trophy');
+	  if ( $expand )
+	  	$group_class = "form-group block_level_$level";
+	  else 
+	  	$group_class = "form-group block_level_$level d-none";
+
+	  echo "<div class='$group_class'><div class='form-title'>$name</div>";
+
+		echo "<select id='level_$level' class='js-select2 rajax_filter' data-level=$level class=''>";
+
+		if ( $expand ) :
+			  $terms = get_terms( 
+			    	'category', [ 
+			    		'hide_empty' => false, 
+			    		'parent' => 0, 
+			    		'exclude' => array( 1, 8 )
+			    	]
+			  );
+
+			  echo "<option selected disabled value='0'>$select_placeholder</option>"; 
+
+			  foreach ( $terms as $term) 
+			    	echo "<option value='$term->term_id'>$term->name</option>";
+
+		endif; 
+
+	  echo "</select>"; 
+
+    echo "</div>";
+ 
+}
+
+
+function reposium_fish_search_form() { 
+
+    echo '<div class="species__detailed-form">';
+
+    reposium_fish_level( 1, __('Kingdom', 'trophy'), 43, true);
+    reposium_fish_level( 2, __('Type', 'trophy') );
+    reposium_fish_level( 3, __('Class', 'trophy') );
+    reposium_fish_level( 4, __('Squad', 'trophy') );
+    reposium_fish_level( 5, __('Family', 'trophy') );
+    reposium_fish_level( 6, __('Genus', 'trophy') ); 
+
+    echo '</div>';
+}
+
