@@ -559,7 +559,8 @@ form.is-form-style input.is-search-submit,
   .page-title {
     font-size: 48px;
   }
-  .section-title {
+  .section-title,
+  .section-content h2 {
     font-size: 36px;
   }
 }
@@ -567,8 +568,12 @@ form.is-form-style input.is-search-submit,
   .page-title {
     font-size: 36px;
   }
-  .section-title {
+  .section-title,
+  .section-content h2 {
     font-size: 24px;
+  }
+  .section-content h2:not(:first-child) {
+    margin-top: 2.5rem;
   }
 }
 @media screen and (max-width: 576px) {
@@ -576,7 +581,8 @@ form.is-form-style input.is-search-submit,
     font-size: 28px;
     margin-bottom: 20px;
   }
-  .section-title {
+  .section-title,
+  .section-content h2 {
     margin-bottom: 16px;
     font-size: 22px;
   }
@@ -791,6 +797,7 @@ form.is-form-style input.is-search-submit,
   width: 100% !important;
   border-radius: 10px !important;
   border: 2px solid var(--global-color) !important;
+  background-color: var(--white-color) !important;
 }
 .is-form-style input.is-search-submit,
 .is-form-style .is-search-submit,
@@ -1306,8 +1313,16 @@ input[type=number]::-webkit-inner-spin-button {
   left: -2px;
   bottom: -2px;
 }
-.section-content .section-title {
+.section-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--font-color);
+}
+.section-content h2:not(:first-child) {
+  margin-top: 3.5rem;
 }
 
 .category-item {
@@ -2270,4 +2285,22 @@ div.is-ajax-search-details, div.is-ajax-search-result {
 .is-search-sections .is-search-content,
 .is-search-sections .meta {
   display: none;
+}
+
+a.button.load-more-button {
+    text-align: center;
+    display: block;
+    margin: 40px auto 0;
+    max-width: 240px;
+    min-height: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.scard.scard_hidden {
+    display: none;
+}
+
+.scard.scard_hidden.scard_hidden_show {
+    display: block;
 }

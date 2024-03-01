@@ -3,7 +3,7 @@
   <div class="container">
     <div class="footer__container">
       <div class="footer__copy">
-        <?php echo __( '© All rights belong to the website www.trophy.fishing and are protected by law. Any use (copying, reprinting, etc.) can only be carried out with the consent of the site owner and indicating the author and a link to the site (www.trophy.fishing) in a prominent place on the page with the material used.', 'trophy' ); ?>
+        <?php echo __( '© All rights reserved. Any use of the material (copying, reprinting, etc.) can only be carried out with consent of the website owner and indicating the author and a link to the website (www.trophy.fishing) in a prominent place on the page with the used material.', 'trophy' ); ?>
       </div>
       <?php
         wp_nav_menu([
@@ -21,6 +21,14 @@
 
 <!-- Script-->
 <?php wp_footer(); ?>
+
+<!-- Запрет на копирование -->
+<script type="text/javascript">
+  document.ondragstart = noselect;
+  document.onselectstart = noselect;
+  document.oncontextmenu = noselect;
+  function noselect() {return false;}
+</script>
 
 </body>
 

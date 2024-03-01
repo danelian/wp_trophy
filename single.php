@@ -21,8 +21,7 @@
     </div>
 
     <?php the_content(); ?>
-    
-    <p class="copyright"><?php echo __( '© All rights belong to the website www.trophy.fishing and are protected by law. Any use (copying, reprinting, etc.) can only be carried out with the consent of the site owner and indicating the author and a link to the site (www.trophy.fishing) in a prominent place on the page with the material used.', 'trophy' ); ?></p>
+
   </div>
 </article>
 

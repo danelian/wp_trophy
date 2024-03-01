@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: trophy\n"
-"POT-Creation-Date: 2023-12-01 03:02+0300\n"
+"POT-Creation-Date: 2023-12-18 17:39+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Super Team\n"
@@ -35,7 +35,7 @@ msgstr "На главную"
 msgid "Articles"
 msgstr "Статьи"
 
-#: backup.php:10 search.php:10
+#: backup.php:10
 msgid "Types of fish"
 msgstr "Виды рыб"
 
@@ -43,28 +43,28 @@ msgstr "Виды рыб"
 msgid "For example:"
 msgstr "Например:"
 
-#: backup.php:59 search.php:17
+#: backup.php:59 search.php:19
 msgid "Detailed search"
 msgstr "Подробный поиск"
 
-#: backup.php:118 search.php:78 searchform.php:6
+#: backup.php:118 functions.php:73 searchform.php:6
 msgid "Search"
 msgstr "Поиск"
 
-#: backup.php:122 search.php:84
+#: backup.php:122 search.php:28
 msgid "Searching results:"
 msgstr "Результаты поиска:"
 
-#: backup.php:145 functions.php:439 search.php:114
+#: backup.php:145 functions.php:440 search.php:61
 msgid "No results"
 msgstr "Нет результатов"
 
 #: footer.php:6 single.php:25
 msgid ""
-"© All rights belong to the website www.trophy.fishing and are protected by "
-"law. Any use (copying, reprinting, etc.) can only be carried out with the "
-"consent of the site owner and indicating the author and a link to the site "
-"(www.trophy.fishing) in a prominent place on the page with the material used."
+"© All rights reserved. Any use of the material (copying, reprinting, etc.) "
+"can only be carried out with consent of the website owner and indicating the "
+"author and a link to the website (www.trophy.fishing) in a prominent place "
+"on the page with the used material."
 msgstr ""
 "© Все права принадлежат сайту www.trophy.fishing и защищены законом. Любое "
 "использование (копирование, перепечатка и т.д.) может осуществляться только "
@@ -72,7 +72,7 @@ msgstr ""
 "(www.trophy.fishing) на видном месте страницы с используемым материалом."
 
 #: front-page.php:6
-msgid "What's biting you?"
+msgid "What's biting?"
 msgstr "Что у вас клюёт?"
 
 #: functions.php:69
@@ -88,40 +88,48 @@ msgid "Enter the name of the fish"
 msgstr "Введите название рыбы"
 
 #: functions.php:72
-msgid "Genus, species or name of fish"
-msgstr "Род, вид или название рыбы"
+msgid "Scientific or common name of the fish"
+msgstr "Научное или общепринятое название рыбы"
 
-#: functions.php:73
+#: functions.php:74
 msgid "Nothing found"
 msgstr "Ничего не найдено"
 
-#: functions.php:395 functions.php:458
+#: functions.php:171
+msgid "Home"
+msgstr "Главная"
+
+#: functions.php:396 functions.php:459
 msgid "Choose"
 msgstr "Выбрать"
 
-#: functions.php:495
+#: functions.php:496
 msgid "Kingdom"
 msgstr "Царство"
 
-#: functions.php:496
-msgid "Type"
+#: functions.php:497
+msgid "Phylum"
 msgstr "Тип"
 
-#: functions.php:497
+#: functions.php:498
 msgid "Class"
 msgstr "Класс"
 
-#: functions.php:498
-msgid "Squad"
+#: functions.php:499
+msgid "Order"
 msgstr "Отряд"
 
-#: functions.php:499
+#: functions.php:500
 msgid "Family"
 msgstr "Семейство"
 
-#: functions.php:500
+#: functions.php:501
 msgid "Genus"
 msgstr "Род"
+
+#: search.php:11
+msgid "Fish species"
+msgstr "Виды рыб"
 
 #: single-articles.php:14
 msgid "Read also"
@@ -134,3 +142,25 @@ msgstr "Ареал обитания"
 #: template-parts/no-post.php:1
 msgid "No posts"
 msgstr "Постов нет"
+
+#~ msgid "Type"
+#~ msgstr "Тип"
+
+#~ msgid ""
+#~ "© All rights belong to the website www.trophy.fishing and are protected "
+#~ "by law. Any use (copying, reprinting, etc.) can only be carried out with "
+#~ "the consent of the site owner and indicating the author and a link to the "
+#~ "site (www.trophy.fishing) in a prominent place on the page with the "
+#~ "material used."
+#~ msgstr ""
+#~ "© Все права принадлежат сайту www.trophy.fishing и защищены законом. "
+#~ "Любое использование (копирование, перепечатка и т.д.) может "
+#~ "осуществляться только по согласованию с владельцем сайта и с указанием "
+#~ "автора и ссылки на сайт (www.trophy.fishing) на видном месте страницы с "
+#~ "используемым материалом."
+
+#~ msgid "Genus, species or name of fish"
+#~ msgstr "Род, вид или название рыбы"
+
+#~ msgid "Squad"
+#~ msgstr "Отряд"

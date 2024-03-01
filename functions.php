@@ -69,7 +69,8 @@ function trophy_scripts() {
 		'select_search' => __('Search...', 'trophy'),
 		'select_nofound' => __('No results found', 'trophy'),
 		'main_searchform' => __('Enter the name of the fish', 'trophy'),
-		'second_searchform' => __('Genus, species or name of fish', 'trophy'),
+		'second_searchform' => __('Scientific or common name of the fish', 'trophy'),
+		'search' => __('Search', 'trophy'),
 		'nothing_found' => __('Nothing found', 'trophy'),
 	];
 	
@@ -149,7 +150,7 @@ function register_post_types(){
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail',), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'), // 'trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => [''],
 		'has_archive'         => true,
 		'rewrite'             => true,
@@ -167,7 +168,7 @@ function register_post_types(){
 function dimox_breadcrumbs() {
 
 	/* === ОПЦИИ === */
-	$text['home']     = 'Главная'; // текст ссылки "Главная"
+	$text['home']     = __('Home', 'trophy'); // текст ссылки "Главная"
 	$text['category'] = '%s'; // текст для страницы рубрики
 	$text['search']   = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
 	$text['tag']      = 'Записи с тегом "%s"'; // текст для страницы тега
@@ -416,6 +417,7 @@ function test_ajax(){
 	$posts_args = array(
       's' => $_POST['search'],
       'cat' => $_POST['term_id'],
+      'posts_per_page' => -1
   );
 
   $the_query = new WP_Query( $posts_args ); 
@@ -423,6 +425,7 @@ function test_ajax(){
   if ( $the_query->have_posts() ) { 
 
     $cards = ''; 
+    $increment = 1; 
 
     while ( $the_query->have_posts() ) {
         $the_query->the_post();
@@ -430,8 +433,14 @@ function test_ajax(){
         $permalink = get_permalink();
         $img       = get_the_post_thumbnail_url();
         $title     = get_the_title();
+
+        if ( $increment > 16)
+        	$scard = 'scard scard_hidden';
+        else
+        	$scard = 'scard';
         
-        $cards .= "<a href='$permalink' class='scard'><div class='scard-image'><img src='$img' alt=''></div><h2 class='scard-title'>$title</h2></a>";
+        $cards .= "<a href='$permalink' class='$scard'><div class='scard-image'><img src='$img' alt=''></div><h2 class='scard-title'>$title</h2></a>";
+        $increment++; 
     }  
 
   } else {
@@ -487,18 +496,45 @@ function reposium_fish_level( $level, $name, $term_id = false, $expand = false )
  
 }
 
+/**
+ * 
+ * 
+ * 
+ */
 
 function reposium_fish_search_form() { 
 
     echo '<div class="species__detailed-form">';
 
     reposium_fish_level( 1, __('Kingdom', 'trophy'), 43, true);
-    reposium_fish_level( 2, __('Type', 'trophy') );
+    reposium_fish_level( 2, __('Phylum', 'trophy') );
     reposium_fish_level( 3, __('Class', 'trophy') );
-    reposium_fish_level( 4, __('Squad', 'trophy') );
+    reposium_fish_level( 4, __('Order', 'trophy') );
     reposium_fish_level( 5, __('Family', 'trophy') );
     reposium_fish_level( 6, __('Genus', 'trophy') ); 
 
     echo '</div>';
 }
 
+
+/**
+ * 
+ * 
+ * 
+ */
+
+ function reposium_load_more() {
+
+ 		// echo '<a href="#" class="button load-more-button" id="load_posts" style="display: none; " data-id="1">'.__('Load More', 'trophy').'</a>';
+
+ 		/*the_posts_pagination(
+      array(
+        'prev_text' => '',
+        'next_text' => '',
+        'end_size' => 3,
+        'mid_size' => 1,
+        'before_page_number' => false,
+      )
+    );*/
+
+ } 

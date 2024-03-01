@@ -3,7 +3,7 @@
 <section class="section-home">
 	<div class="container">
 		<div class="section-search">
-			<h1 class="page-title"><?php echo __("What's biting you?", 'trophy') ?></h1>
+			<h1 class="page-title"><?php echo __("What's biting?", 'trophy') ?></h1>
 			<?php echo do_shortcode('[ivory-search id="181" title="AJAX Search Form"]'); ?>
 		</div>
 
@@ -36,7 +36,6 @@
 		</div>
 
 		<div class="section-content">
-			<h1 class="section-title"><?php the_field('front_info_title'); ?></h1>
 			<?php the_field('front_info_content'); ?>
 		</div>
 	</div>

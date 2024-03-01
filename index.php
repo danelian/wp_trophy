@@ -33,6 +33,9 @@
     the_posts_pagination(array(
       'prev_text'    => '',
       'next_text'    => '',
+      'end_size' => 3,
+      'mid_size' => 1,
+      'before_page_number' => false,
     ));
     $wp_query = $restore_wp_query;
     ?>

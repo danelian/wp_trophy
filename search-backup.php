@@ -21,49 +21,46 @@ get_header();
       </div>
 
       <?php reposium_fish_search_form(); ?>
-
     </div>
 
     <div class="species__results">
       <h3 class="species__results-title">
         <?php echo __('Searching results:', 'trophy'); ?>
       </h3>
-
       <?php
 
-          $posts_per_page = -1;
-          $search_query   = get_search_query();
+      $args = array(
+        's' => get_search_query(),
+      );
 
-          $args = array(
-            's' => $search_query,
-            'posts_per_page' => $posts_per_page
-          );
+      $the_query = new WP_Query($args);
 
-          $the_query = new WP_Query($args);
+      if ($the_query->have_posts()) {
 
-          if ($the_query->have_posts()) {
+        echo '<div class="species__cards" id="ajax_search">';
 
-              $increment = 1; 
+        while ($the_query->have_posts()) {
+          $the_query->the_post();
+          get_template_part('template-parts/scard');
+        }
 
-              echo '<div class="species__cards" id="ajax_search">';
+        echo '</div>';
 
-              while ($the_query->have_posts()) {
+        the_posts_pagination(
+          array(
+            'prev_text' => '',
+            'next_text' => '',
+            'end_size' => 3,
+            'mid_size' => 1,
+            'before_page_number' => false,
+          )
+        );
 
-                  $the_query->the_post();
-                  get_template_part( 'template-parts/scard', '', array( 'i' => $increment ) );
-                  $increment++; 
+      } else {
 
-              }
+        echo '<p class="species__results-empty">' . __('No results', 'trophy') . '</p>';
 
-              echo '</div>';
-
-              reposium_load_more( $search_query, $posts_per_page); 
-
-          } else {
-
-              echo '<p class="species__results-empty">' . __('No results', 'trophy') . '</p>';
-
-          }
+      }
 
       ?>
 
