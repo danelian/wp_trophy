@@ -46,6 +46,7 @@ function trophy_scripts() {
   wp_enqueue_style('select2', get_template_directory_uri() . '/assets/css/select2.min.css');
   // App style
   wp_enqueue_style('app', get_template_directory_uri() . '/assets/css/style.min.css');
+  wp_enqueue_style('dark-theme', get_template_directory_uri() . '/assets/css/dark-theme.css');
 
   // SCRIPTS
   // Jquery

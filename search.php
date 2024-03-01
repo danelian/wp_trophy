@@ -16,8 +16,11 @@ get_header();
 
     <div class="species__detailed" data-search="<?= get_search_query(); ?>">
       <div class="species__detailed-title">
-        <?php echo __('Detailed search', 'trophy'); ?> <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/chevron-down.svg" alt="">
+        <?php echo __('Detailed search', 'trophy'); ?>
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5855 21.5858C11.8045 20.8047 11.8045 19.5384 12.5855 18.7574L23.7571 7.58579C24.5381 6.80474 25.8044 6.80474 26.5855 7.58579C27.3665 8.36684 27.3665 9.63317 26.5855 10.4142L15.4139 21.5858C14.6329 22.3668 13.3665 22.3668 12.5855 21.5858Z" fill="currentColor"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4144 21.5858C16.1954 20.8047 16.1954 19.5384 15.4144 18.7574L4.24283 7.58579C3.46178 6.80474 2.19545 6.80474 1.4144 7.58579C0.633352 8.36684 0.633351 9.63317 1.4144 10.4142L12.586 21.5858C13.367 22.3668 14.6334 22.3668 15.4144 21.5858Z" fill="currentColor"/>
+        </svg>
       </div>
 
       <?php reposium_fish_search_form(); ?>
